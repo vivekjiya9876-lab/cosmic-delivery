@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Tags -->
+  <title>GloboCrust | World-Class Pizza, Hyper-Local Telemetry Delivery</title>
+  <meta name="description" content="Experience high-conversion, hyper-premium specialty pizza delivery anywhere in the world. Configured locally, tracked in real-time, delivered to your doorstep.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#FF3B30',
+              hover: '#E03025',
+              glow: 'rgba(255, 59, 48, 0.4)'
+            },
+            luxury: {
+              darkBg: '#121212',
+              cardBg: '#1c1c1e',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Outfit', 'sans-serif'], // Premium modern geometry headings
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styling and Keyframes -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="bg-zinc-950 text-white font-sans selection:bg-accent selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- 1. Sticky Premium Header -->
+  <header class="sticky top-0 z-30 w-full border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center text-white shadow-[0_0_15px_rgba(255,59,48,0.5)] group-hover:scale-105 transition-transform duration-200">
+          <i class="fas fa-globe text-sm"></i>
+        </div>
+        <span class="font-serif font-black text-2xl tracking-tight text-white">
+          Globo<span class="text-accent">Crust</span>
+        </span>
+      </a>
+
+      <!-- Desktop Mid Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400">
+        <a href="#menu-section" class="hover:text-white transition-colors duration-150">Global Menu</a>
+        <a href="#configurator-section" class="hover:text-white transition-colors duration-150">Crust Atelier</a>
+        <a href="#about-section" class="hover:text-white transition-colors duration-150">Supersonic Flight</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Tracker Telemetry shortcut -->
+        <button 
+          id="nav-tracker-btn" 
+          title="Track Active Delivery"
+          class="w-10 h-10 rounded-xl border border-zinc-900 bg-zinc-950/40 hover:border-zinc-800 transition-all duration-200 flex items-center justify-center text-white opacity-40 focus:outline-none"
+        >
+          <i class="fas fa-plane-arrival text-sm"></i>
+        </button>
+
+        <!-- Cart Box trigger -->
+        <button 
+          id="nav-cart-btn"
+          class="relative flex items-center gap-2.5 py-2.5 px-4 rounded-xl border border-zinc-900 bg-zinc-950/80 hover:border-[#FF3B30] hover:bg-zinc-900 transition-all duration-200 focus:outline-none"
+        >
+          <i class="fas fa-shopping-basket text-sm text-zinc-400 group-hover:text-white"></i>
+          <span class="hidden sm:inline text-xs font-bold uppercase tracking-wider text-white">Box</span>
+          <!-- Dynamic count badge -->
+          <span 
+            id="nav-cart-count"
+            class="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1.5 rounded-full bg-accent text-[10px] font-black font-sans text-white border-2 border-zinc-950 flex items-center justify-center transition-all duration-300 scale-0"
+          >
+            0
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- 2. Dynamic Geo-Localization Hero Section -->
+    <section class="relative overflow-hidden py-16 lg:py-24 border-b border-zinc-900 bg-gradient-to-b from-zinc-950 to-zinc-900/50">
+      <!-- Ambient light gradients -->
+      <div class="absolute top-20 right-0 w-[40rem] h-[40rem] rounded-full bg-accent/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-10 w-[20rem] h-[20rem] rounded-full bg-zinc-800/10 blur-3xl pointer-events-none"></div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Deck: Catch copy & localization input -->
+        <div class="lg:col-span-7 space-y-8 text-left">
+          
+          <!-- Small badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-[10px] uppercase tracking-widest font-black text-accent">
+            <i class="fas fa-satellite-dish animate-pulse"></i>
+            <span>Supersonic Pizza Logistics</span>
+          </div>
+
+          <!-- Main Catchphrase -->
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-white">
+            World-Class Pizza.<br>
+            <span class="text-accent">Hyper-Local</span> Delivery.
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-400 font-sans leading-relaxed max-w-2xl">
+            Savor legendary, chef-curated crust specialties fired locally by artisan hubs around the globe. Fast tracked to your door via carbon-neutral delivery networks.
+          </p>
+
+          <!-- Localizer Box -->
+          <div class="p-6 rounded-2xl bg-zinc-950 border border-zinc-900 shadow-2xl space-y-4 max-w-xl">
+            <div class="text-[11px] uppercase tracking-widest font-bold text-accent">Specify Destination Coordinates</div>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+              <!-- Location select dropdown -->
+              <div class="relative flex-grow">
+                <select 
+                  id="hero-location-select"
+                  class="w-full px-4 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-semibold text-white focus:border-accent focus:outline-none transition-colors duration-150 appearance-none cursor-pointer"
+                >
+                  <!-- Populated by localization.js -->
+                </select>
+                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-zinc-500 text-xs">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+
+              <!-- Auto-Detect button -->
+              <button 
+                id="hero-locate-btn"
+                class="px-5 py-3.5 rounded-xl border border-zinc-800 bg-zinc-900 text-xs font-bold uppercase tracking-wider text-white hover:border-accent hover:bg-zinc-900/60 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 shrink-0"
+              >
+                <i class="fas fa-location-crosshairs"></i>
+                <span>Auto-Detect</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Kitchen Indicator Badge -->
+            <div 
+              id="hero-kitchen-indicator" 
+              class="flex items-center gap-2 text-xs font-semibold text-zinc-400 font-sans bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-900/80 transition-all duration-300"
+            >
+              <i class="fas fa-circle-nodes text-accent text-xs animate-pulse"></i>
+              <span>Locating nearest regional ovens...</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Deck: Premium visual pizza -->
+        <div class="lg:col-span-5 flex justify-center items-center">
+          <div class="relative w-full max-w-[340px] sm:max-w-[380px] aspect-square">
+            
+            <!-- Glow background circle -->
+            <div class="absolute inset-4 rounded-full bg-accent/10 blur-3xl animate-pulse"></div>
+            
+            <!-- Luxury Rotating Pizza Image -->
+            <div class="w-full h-full rounded-full border border-zinc-800 p-2 bg-zinc-950/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)] animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&q=80&w=600" 
+                alt="GloboCrust Signature Pizza" 
+                class="w-full h-full object-cover rounded-full select-none"
+              />
+            </div>
+            
+            <!-- Small floating ingredients or overlays -->
+            <div class="absolute -top-3 -right-3 px-3.5 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800/80 backdrop-blur-md shadow-2xl flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-white">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>100% Blistered DOP</span>
+            </div>
+
+            <div class="absolute -bottom-3 -left-3 px-3.5 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800/80 backdrop-blur-md shadow-2xl flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-white">
+              <span class="w-2 h-2 rounded-full bg-[#FF3B30] animate-pulse"></span>
+              <span>28 Min Supersonic Flight</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Global Menu Section -->
+    <section id="menu-section" class="py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 border-b border-zinc-900">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="text-xs uppercase tracking-widest font-black text-accent">The Global Selection</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black tracking-tight text-white">
+          Regional Crust Masterpieces
+        </h2>
+        <p class="text-sm text-zinc-400 leading-relaxed font-sans">
+          Indulge in our localized creations, sourced with native premium ingredients and baked under volcanic brick heat.
+        </p>
+      </div>
+
+      <!-- Menu Grid Element -->
+      <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Loaded dynamically by menu.js -->
+        <!-- Fallback Shimmer loading state -->
+        <div class="h-96 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 flex flex-col justify-between shimmer"></div>
+        <div class="h-96 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 flex flex-col justify-between shimmer"></div>
+        <div class="h-96 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 flex flex-col justify-between shimmer"></div>
+      </div>
+
+    </section>
+
+    <!-- 4. Build-Your-Own-Crust Section -->
+    <section id="configurator-section" class="py-20 bg-zinc-950/40 border-b border-zinc-900">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div class="text-xs uppercase tracking-widest font-black text-accent">Bespoke Atelier</div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Build-Your-Own-Crust
+          </h2>
+          <p class="text-sm text-zinc-400 leading-relaxed font-sans">
+            Customize dimensions, select artisanal dough formulas, and drag-and-drop gourmet toppings in real-time.
+          </p>
+        </div>
+
+        <!-- Interactive workspace container -->
+        <div id="configurator-workspace" class="w-full">
+          <!-- Loaded dynamically by configurator.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Informative Supersonic Logistics Section -->
+    <section id="about-section" class="py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+        
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl">
+            <i class="fas fa-volcano"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">900° Volcanic Heat</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Every crust is blistered in custom ovens lined with volcanic basalt stone slabs imported directly from Mt. Etna, guaranteeing the perfect structural bite.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl">
+            <i class="fas fa-jet-fighter"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Supersonic Airspaces</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            By coordinating flight routing via supersonic high-altitude drone networks, we cross city barriers, delivering warm boxes to your doorstep.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-white">Carbon Zero Guarantee</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            We pledge carbon-neutrality on all long-range delivery sectors, utilizing bio-fuels and local organic sourcing to offset our thermal trace.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. Footer -->
+  <footer class="w-full border-t border-zinc-900 bg-zinc-950 py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-sans">
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-black text-white text-sm">Globo<span class="text-accent">Crust</span></span>
+        <span>&copy; 2026. All rights reserved.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors">Safety Code</a>
+        <a href="#" class="hover:text-white transition-colors">Supersonic airspace agreements</a>
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= DRAWERS & OVERLAYS ================= -->
+
+  <!-- Shared Drawer Backdrop overlay -->
+  <div 
+    id="drawer-overlay"
+    class="pointer-events-none opacity-0 fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"
+  ></div>
+
+  <!-- Cart / Checkout Drawer -->
+  <div 
+    id="cart-drawer"
+    class="translate-x-full fixed right-0 top-0 bottom-0 w-full max-w-md bg-zinc-900 border-l border-zinc-800/80 shadow-[0_0_50px_rgba(0,0,0,0.8)] z-50 transition-transform duration-300 ease-in-out flex flex-col"
+  >
+    <!-- Drawer Header -->
+    <div class="px-6 py-6 border-b border-zinc-800/60 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-box text-accent text-sm"></i>
+        <h3 class="font-serif text-lg font-bold text-white">Your Pizza Box</h3>
+      </div>
+      <button 
+        id="cart-close-btn"
+        class="w-8 h-8 rounded-lg bg-zinc-950 hover:bg-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-150 focus:outline-none"
+      >
+        <i class="fas fa-times text-sm"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Contents Slot -->
+    <div id="cart-drawer-content" class="flex-grow overflow-hidden">
+      <!-- Loaded dynamically by cart.js -->
+    </div>
+  </div>
+
+  <!-- Tracking Drawer -->
+  <div 
+    id="tracker-drawer"
+    class="translate-x-full fixed right-0 top-0 bottom-0 w-full max-w-md bg-zinc-900 border-l border-zinc-800/80 shadow-[0_0_50px_rgba(0,0,0,0.8)] z-50 transition-transform duration-300 ease-in-out flex flex-col"
+  >
+    <!-- Drawer Header -->
+    <div class="px-6 py-6 border-b border-zinc-800/60 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-plane text-accent text-sm"></i>
+        <h3 class="font-serif text-lg font-bold text-white">Courier Telemetry</h3>
+      </div>
+      <button 
+        id="tracker-close-btn"
+        class="w-8 h-8 rounded-lg bg-zinc-950 hover:bg-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white transition-colors duration-150 focus:outline-none"
+      >
+        <i class="fas fa-times text-sm"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Contents Slot -->
+    <div id="tracker-drawer-content" class="flex-grow overflow-hidden">
+      <!-- Loaded dynamically by tracker.js -->
+    </div>
+  </div>
+
+  <!-- Floating Toast Notifications Box -->
+  <div id="toast-container" class="fixed bottom-6 right-6 flex flex-col gap-3 z-50"></div>
+
+  <!-- Core App Controller Script (ES Modules) -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
